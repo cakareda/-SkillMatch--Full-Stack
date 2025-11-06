@@ -1,0 +1,34 @@
+<div class="login-container">
+  <form (ngSubmit)="onLogin()" class="login-form">
+    <h2>Admin Login</h2>
+    <p>Log in to access Admin features (Add/Delete/Update).</p>
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        id="email"
+        type="email" 
+        [(ngModel)]="email" 
+        name="email" 
+        placeholder="admin@skillmatch.com"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        id="password"
+        type="password" 
+        [(ngModel)]="password" 
+        name="password" 
+        placeholder="••••••••"
+        required>
+    </div>
+      
+    <button type="submit" class="login-button">Log In</button>
+    
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

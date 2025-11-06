@@ -1,0 +1,121 @@
+/* frontend/src/app/app.css (NIHAİ ESTETİK DÜZELTME) */
+
+* {
+  font-family: 'Museo Moderno', sans-serif !important;
+}
+
+/* --- NAVBAR DÜZENİ GÜNCELLENDİ (Logoyu Merkeze Al) --- */
+.navbar {
+  background-color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 5px 12px rgba(0,0,0,0.3));
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.tagline {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #444, #000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
+  }
+  to {
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- JWT ADMIN BUTON STİLLERİ (Sabitleme) --- */
+
+.nav-links {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-btn {
+  font-family: 'Museo Moderno', sans-serif !important;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background: none;
+  white-space: nowrap;
+  margin-left: 15px;
+  text-transform: uppercase;
+}
+
+.login-btn {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.login-btn:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4);
+}
+
+.logout-btn {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.logout-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(220, 53, 69, 0.4);
+}

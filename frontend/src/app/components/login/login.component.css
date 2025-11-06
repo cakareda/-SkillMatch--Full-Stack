@@ -1,0 +1,112 @@
+/* full page container, centers the form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #fafafa;
+  /* full viewport height minus navbar */
+  min-height: calc(100vh - 190px);
+}
+
+/* the white login form box */
+.login-form {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  animation: popUp 0.4s ease-out; /* entry animation */
+}
+
+/* form entry animation keyframes */
+@keyframes popUp {
+  from {
+	opacity: 0;
+	transform: scale(0.95);
+  }
+  to {
+	opacity: 1;
+	transform: scale(1);
+  }
+}
+
+/* form title */
+.login-form h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* subtitle text below the title */
+.login-form p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* wrapper for label and input */
+.form-group {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+/* form field labels */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+/* form text inputs */
+.form-group input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: 'museo moderno', sans-serif;
+  box-sizing: border-box; /* fixes width/padding issue */
+}
+
+/* focus style for inputs */
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+
+/* primary submit button */
+.login-button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: 'museo moderno', sans-serif;
+  font-size: 1.1rem;
+}
+
+/* button hover: lift and shadow */
+.login-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+}
+
+/* displays login failure messages */
+.error-message {
+  margin-top: 1.5rem;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.95rem;
+}

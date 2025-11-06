@@ -1,0 +1,157 @@
+/* center the profile page content */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #f9fafb; /* light gray background */
+  min-height: 100vh;
+}
+
+/* main content card */
+.profile-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 28px 32px;
+  border: 1px solid #e5e7eb;
+}
+
+/* main page title */
+.profile-title {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* subtitle text */
+.profile-subtitle {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+/* --- form styles --- */
+
+/* container for skill input and button */
+.skill-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* text input for new skill */
+.skill-input {
+  flex-grow: 1; /* allow input to fill space */
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+/* input focus style */
+.skill-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255, 0.1);
+}
+
+/* 'add skill' button */
+.add-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+/* --- skill tag styles --- */
+
+/* wrapper for all skill tags */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  min-height: 50px; /* retain space when empty */
+}
+
+/* placeholder text when no skills */
+.no-skills {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* individual skill tag pill */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #eef2ff; /* indigo-50 */
+  color: #3730a3; /* indigo-800 */
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 9999px; /* full pill shape */
+  padding: 6px 8px 6px 12px;
+  animation: popin 0.3s ease;
+}
+
+/* skill tag entry animation */
+@keyframes popin {
+  from { transform: scale(0.8); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* 'x' button to remove skill */
+.remove-btn {
+  background-color: #c7d2fe; /* darker indigo */
+  color: #3730a3;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem; 
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+/* remove button hover state (red) */
+.remove-btn:hover {
+  background-color: #ef4444; /* red */
+  color: white;
+}
+
+/* --- messages & loaders --- */
+
+/* feedback message on success */
+.success-message {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+/* loading state indicator */
+.loading-spinner {
+  text-align: center;
+  color: #4b5563;
+  font-weight: 500;
+  padding: 20px;
+}

@@ -1,0 +1,44 @@
+<!-- Sizin <header class="navbar"> yapınız -->
+<header class="navbar">
+  <!-- Sizin logo-container yapınız (link olmadan) -->
+  <div class="logo-container"> 
+    <img src="assets/skillmatch-logo.png" alt="SkillMatch Logo" class="logo-img" />
+  </div>
+  
+  <div class="nav-links">
+    
+    <!-- Az önce eklediğimiz <ng-container> giriş/çıkış kontrol mantığı -->
+    <ng-container *ngIf="(isAdmin$ | async); else loggedOut">
+      <!-- GİRİŞ YAPILMIŞSA -->
+      
+      <!-- YENİ: Profil Linki (Sizin 'nav-link-btn' class'ınızla) -->
+      <a routerLink="/profile" class="nav-link-btn profile-link">
+        My Profile
+      </a>
+
+      <!-- Admin Başvurular Linki (Sizin 'nav-link-btn' class'ınızla) -->
+      <a routerLink="/admin/applications" class="nav-link-btn admin-link">
+        Applications
+      </a>
+      
+      <!-- Çıkış Butonu (Sizin yapınız ve onLogout() fonksiyon çağrınız) -->
+      <button (click)="onLogout()" class="nav-link-btn logout-btn">
+        Log Out
+      </button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <!-- GİRİŞ YAPILMAMIŞSA -->
+      <!-- Sizin login link yapınız -->
+      <a routerLink="/login" class="nav-link-btn login-btn">
+        LOG IN
+      </a>
+    </ng-template>
+  </div>
+</header>
+
+<!-- Sizin <main> sarmalayıcınız -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+

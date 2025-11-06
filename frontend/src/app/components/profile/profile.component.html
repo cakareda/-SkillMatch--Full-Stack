@@ -1,0 +1,40 @@
+<div class="profile-card">
+    <h2 class="profile-title">My Profile and Skills</h2>
+    <p class="profile-subtitle">
+        To enable the "SkillMatch" feature, please add the technologies you are familiar with.
+    </p>
+
+    <form (ngSubmit)="addSkill()" class="skill-form">
+        <input 
+            type="text" 
+            [(ngModel)]="skillInput" 
+            name="skillInput"
+            class="skill-input" 
+            placeholder="Örn: Java, React, AWS..."
+        />
+        <button type="submit" class="add-btn">Add</button>
+    </form>
+
+    <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+    </div>
+
+    <div class="skills-container">
+        <div *ngIf="(userSkills$ | async) as skills">
+            <p *ngIf="skills.length === 0 && !isLoading" class="no-skills">
+                You didn't add any skill yet.
+            </p>
+
+            <span *ngFor="let skill of skills" class="skill-tag">
+                {{ skill }}
+                <button (click)="removeSkill(skill)" class="remove-btn">
+                    &times; 
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div *ngIf="isLoading" class="loading-spinner">
+        Loading...
+    </div>
+</div>

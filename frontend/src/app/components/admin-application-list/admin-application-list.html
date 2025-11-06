@@ -1,0 +1,28 @@
+<div class="admin-container">
+  <h2> Job Applications</h2>
+
+  <table *ngIf="applications.length > 0; else noData">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Applicant Name</th>
+        <th>Email</th>
+        <th>Job Title</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let app of applications; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ app.name }}</td>
+        <td>{{ app.email }}</td>
+        <td>{{ app.jobTitle }}</td>
+        <td>{{ app.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No applications found yet </p>
+  </ng-template>
+</div>
